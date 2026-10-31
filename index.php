@@ -1,5 +1,4 @@
 <?php
-// Cambia estos datos para personalizar tu página.
 $nombre = 'Freddy Estrella';
 $carrera = 'Estudiante de Ing. de Software y Desarrollo Web';
 $correo = 'freddyest2013@gmail.com';
@@ -17,7 +16,6 @@ $operaciones = ['sumar' => 'Sumar (+)', 'restar' => 'Restar (−)',
                 'multiplicar' => 'Multiplicar (×)', 'dividir' => 'Dividir (÷)'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Comprueba también que no se hayan enviado arreglos en los campos.
     $numero1 = is_string($_POST['numero1'] ?? null) ? trim($_POST['numero1']) : '';
     $numero2 = is_string($_POST['numero2'] ?? null) ? trim($_POST['numero2']) : '';
     $operacion = is_string($_POST['operacion'] ?? null) ? $_POST['operacion'] : '';
