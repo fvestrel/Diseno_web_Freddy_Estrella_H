@@ -1,0 +1,57 @@
+/* Colores y medidas compartidos mediante variables CSS. */
+:root { --fondo: #f6f7f2; --texto: #182e29; --acento: #21614c; --borde: #d6dfd6; --blanco: #fff; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--fondo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+a { color: var(--acento); text-underline-offset: 4px; }
+.encabezado, main, footer { width: min(1100px, 90%); margin-inline: auto; }
+.encabezado { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 25px 0; border-bottom: 1px solid var(--borde); }
+.marca { font-size: 23px; font-weight: 800; text-decoration: none; color: var(--texto); }
+.marca span { color: var(--acento); }
+nav { display: flex; flex-wrap: wrap; gap: 22px; }
+nav a { color: var(--texto); font-size: 14px; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.presentacion { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center; padding: 80px 0; }
+.etiqueta { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--acento); }
+h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.12; letter-spacing: -2px; margin: 22px 0; overflow-wrap: anywhere; }
+h1 span { color: var(--acento); }
+h2 { font-size: clamp(28px, 4vw, 39px); line-height: 1.2; letter-spacing: -1px; margin: 12px 0 22px; }
+h3 { font-size: 17px; line-height: 1.4; }
+.subtitulo { font-weight: bold; }
+.boton { display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 22px; background: var(--acento); color: white; border: 0; border-radius: 8px; font: inherit; font-weight: bold; text-decoration: none; cursor: pointer; }
+.presentacion .boton { margin-top: 15px; }
+.boton:hover { background: #164a39; }
+.tarjeta-perfil { min-height: 320px; border-radius: 24px; background: #dfe9da; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; transform: rotate(2deg); }
+.simbolo { font: bold 80px monospace; color: var(--acento); }
+.tarjeta-perfil p { font-weight: bold; }
+.tecnologias { display: flex; gap: 8px; flex-wrap: wrap; }
+.tecnologias span { padding: 4px 13px; background: #f6f7f2; border-radius: 20px; font-size: 12px; }
+.seccion { padding: 54px 0; border-top: 1px solid var(--borde); }
+.intereses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+.intereses article { padding: 20px; border: 1px solid var(--borde); border-radius: 12px; background: var(--blanco); }
+.intereses p { font-size: 14px; }
+.calculadora { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.formulario { background: var(--blanco); border: 1px solid var(--borde); padding: 28px; border-radius: 16px; box-shadow: 0 12px 30px #183d2910; }
+.numeros { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 7px; }
+input, select { width: 100%; min-width: 0; padding: 12px; border: 1px solid #99ada2; border-radius: 7px; background: white; color: var(--texto); font: inherit; margin-bottom: 20px; }
+.formulario .boton { width: 100%; justify-content: center; }
+.respuesta { margin-top: 22px; padding: 18px; border-radius: 8px; background: var(--fondo); overflow-wrap: anywhere; }
+.respuesta p { margin: 0; }
+.respuesta span { display: block; font-size: 12px; }
+.respuesta strong { display: block; font-size: 30px; }
+.error { color: #a12626; }
+footer { padding: 20px 0; border-top: 1px solid var(--borde); font-size: 12px; }
+:focus-visible { outline: 3px solid #b77514; outline-offset: 4px; }
+@media (max-width: 720px) {
+    .encabezado { align-items: flex-start; flex-direction: column; gap: 12px; }
+    nav { gap: 16px; }
+    .presentacion, .calculadora { grid-template-columns: 1fr; gap: 30px; }
+    .presentacion { padding: 45px 0; }
+    .tarjeta-perfil { min-height: 220px; transform: none; }
+    .intereses { grid-template-columns: 1fr; }
+    .seccion { padding: 38px 0; }
+    .formulario { padding: 20px; }
+}
+@media (max-width: 380px) { .numeros { grid-template-columns: 1fr; gap: 0; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
